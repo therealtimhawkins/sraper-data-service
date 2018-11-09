@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const restaurantsRoutes = require('./src/routes/restaurants');
 
-require('./startup/db')();
+require('./src/startup/db')();
 
 app.use(express.json());
 app.use('/api/restaurants', restaurantsRoutes);
