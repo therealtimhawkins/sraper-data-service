@@ -13,5 +13,3 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
   res.send(`scraper-data-service is running on port ${port}`);
 });
-
-
