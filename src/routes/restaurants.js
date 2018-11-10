@@ -7,6 +7,11 @@ router.get('/', async (req, res) => {
   res.send(restaurants);
 });
 
+router.get('/:id', async (req, res) => {
+  const restaurant = await model.getRestaurantById(req.params.id);
+  res.send(restaurant);
+})
+
 router.get('/ids', async (req, res) => {
   const ids = await model.getRestaurantIds();
   res.send(ids);

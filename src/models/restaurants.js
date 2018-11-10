@@ -41,6 +41,11 @@ async function getRestaurants() {
   return result;
 };
 
+async function getRestaurantById(id) {
+  let result = await Restaurant.findById(id);
+  return result;
+}
+
 async function getRestaurantIds() {
   let result = await Restaurant.find().distinct('_id');
   return result;
@@ -49,5 +54,6 @@ async function getRestaurantIds() {
 module.exports = {
   postRestaurant,
   getRestaurants,
+  getRestaurantById,
   getRestaurantIds,
 };
