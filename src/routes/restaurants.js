@@ -7,9 +7,14 @@ router.get('/', async (req, res) => {
   res.send(restaurants);
 });
 
+router.get('/ids', async (req, res) => {
+  const ids = await model.getRestaurantIds();
+  res.send(ids);
+});
+
 router.post('/create', async (req, res) => {
   const restaurant = await model.postRestaurant(req.body);
   res.send(restaurant);
-})
+});
 
 module.exports = router;

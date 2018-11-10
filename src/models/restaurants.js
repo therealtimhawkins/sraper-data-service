@@ -32,16 +32,22 @@ async function postRestaurant(body) {
     coords: body.coords,
     rating: body.rating,
     dishes: body.dishes,
-  })
+  });
   return await restaurant.save();
-}
+};
 
 async function getRestaurants() {
   let result = await Restaurant.find();
   return result;
-}
+};
+
+async function getRestaurantIds() {
+  let result = await Restaurant.find().distinct('_id');
+  return result;
+};
 
 module.exports = {
   postRestaurant,
   getRestaurants,
-}
+  getRestaurantIds,
+};
