@@ -14,8 +14,8 @@ const restaurantSchema = new mongoose.Schema({
     required: false,
   },
   rating: {
-    type: Number,
-    required: true,
+    type: String,
+    required: false,
   },
   dishes: {
     type: Array,
