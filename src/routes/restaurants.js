@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
 
 router.get('/id/:id', async (req, res) => {
   const restaurant = await model.getRestaurantById(req.params.id);
+  console.log(`Sending ${restaurant.name}!`)
   res.send(restaurant);
 })
 
