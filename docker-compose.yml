@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  scraper-data-service:
+    image: timhaydenhawkins/scraper-data-service
+    ports: 
+      - 2999:2999
